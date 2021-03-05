@@ -9,6 +9,7 @@
 class Card{
     public:
         Card();
+        void assignValue(std::string n, int p)
         void new_card_file(std::ifstream &fin);
         std::string name;
         int price;

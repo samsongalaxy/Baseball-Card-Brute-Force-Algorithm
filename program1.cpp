@@ -7,6 +7,13 @@
 
 using namespace std;
 
+bool card_check(Card *i, string c){
+  for(int j = 0; j < sizeof(i)/sizeof(i[0])); j++){
+    if(i[j].name == c) return true;
+  }
+  return false;
+}
+
 int main(int argc, char *argv[]){
   string mpf;
   cin >> mpf;
@@ -16,12 +23,12 @@ int main(int argc, char *argv[]){
   getline(mpfin, temp);
   int n = stoi(temp); //number of cards in market_price
   Card *i = new Card[n];
-  int sum = 0; //cost of all of Gertrude's card
+
   for(int j = 0; j < n; j++){
     Card c;
     c.new_card_file(mpfin);
     i[j] = c;
-    sum += i[j].price;
+
   }
   mpfin.close();
   string plf;
@@ -34,11 +41,16 @@ int main(int argc, char *argv[]){
     getline(plfin, temp, '\n');
     int w = stoi(temp); //weight constraint for problem
     Card *s = new Card[x];
-
+    int sum = 0; //potential cost of all of Gertrude's card
     for(int j = 0; j < x; j++){
       Card c;
       c.new_card_file(plfin);
       s[j] = c;
+      sum += s[j].price;
+      if(!card_check(i, s[j].name)){
+        cout << "ERROR: " << s[j].name << " not found in market price file.\nEnding program...\n";
+        return 0;
+      }
     }
     int maxProfit = 0;
     Card *m = new Card[x];

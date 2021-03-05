@@ -8,7 +8,7 @@
 using namespace std;
 
 bool card_check(Card *i, string c){
-  for(int j = 0; j < sizeof(i)/sizeof(i[0])); j++){
+  for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
     if(i[j].name == c) return true;
   }
   return false;

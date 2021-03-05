@@ -17,7 +17,7 @@ int main(int argc, char *argv[]){
   int n = stoi(temp); //number of cards in market_price
   Card *i = new Card[n];
   int sum = 0; //cost of all of Gertrude's card
-  for(int j = 0, j < n; j++){
+  for(int j = 0; j < n; j++){
     Card c;
     c.new_card_file(mpfin);
     i[j] = c;
@@ -29,13 +29,14 @@ int main(int argc, char *argv[]){
   ifstream plfin;
   plfin.open(plf, ios::in);
   while(!plfin.eof()){
-    getline(plfin, temp, " ");
+    getline(plfin, temp, ' ');
     int x = stoi(temp); //number of cards for current section in price_list
-    getline(plfin, temp, "\n");
+    getline(plfin, temp, '\n');
     int w = stoi(temp); //weight constraint for problem
     Card *s = new Card[x];
 
-    for(int j = 0, j < x; j++){
+    for(int j = 0; j < x; j++){
+      Card c;
       c.new_card_file(plfin);
       s[j] = c;
     }

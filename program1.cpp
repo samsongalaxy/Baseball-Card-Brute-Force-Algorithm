@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
-#include <time>
+#include <ctime>
 #include "Card.h"
 
 using namespace std;

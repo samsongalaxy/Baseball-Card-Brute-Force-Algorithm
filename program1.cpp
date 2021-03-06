@@ -75,22 +75,11 @@ int main(int argc, char *argv[]){
     int maxProfit = 0, cardsBought = 0;
     Card *m = new Card[x];
     if(sum <= w){
-      cout << "hi1\n";
+      //cout << "hi1\n";
       ofstream fout;
       fout.open("output.txt", ios::out | ios::trunc);
       fout << x << "\n";
-      int profit = 0;
-      for(int j = 0; j < sizeof(m)/sizeof(m[0]); j++){
-        cout << "Current card price: " << m[j].price << "\n";
-        cout << "Current card name: " << m[j].name << "\n";
-        for(int k = 0; k < sizeof(i)/sizeof(i[0]); k++){
-          cout << "Current card price: " << i[k].price << "\n";
-          cout << "Current card name: " << i[k].name << "\n";
-          if(m[j].name == i[k].name) profit += i[k].price - m[j].price;
-          cout << "Current profit: " << profit << "\n";
-        }
-      }
-      fout << profit << "\n";
+      fout << find_profit(i, s) << "\n";
       fout << x << "\n";
       fout << ((double)clock()-start)/(double)CLOCKS_PER_SEC << "\n";
       cout << "The current problem has finished, press ENTER to go to the next one or type 'q' to end the program.\n";

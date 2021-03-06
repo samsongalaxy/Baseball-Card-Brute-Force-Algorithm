@@ -85,10 +85,10 @@ int main(int argc, char *argv[]){
         cout << "Current card price: " << s[j].get_price() << "\n";
         cout << "Current card name: " << s[j].get_name() << "\n";
         for(int k = 0; k < n; k++){
-          cout << "Current card price: " << i[k].price << "\n";
-          cout << "Current card name: " << i[k].name << "\n";
           string s1 = m[j].get_name();
           string s2 = i[k].get_name();
+          cout << "Current card price: " << i[k].price << "\n";
+          cout << "Current card name: " << s2.c_str() << "\n";
           if(strcmp(s1.c_str(), s2.c_str()) == 0) profit += i[k].price - m[j].price;
           cout << "Current profit: " << profit << "\n";
         }

@@ -78,7 +78,13 @@ int main(int argc, char *argv[]){
       ofstream fout;
       fout.open("output.txt", ios::out | ios::trunc);
       fout << x << "\n";
-      fout << find_profit(i, s) << "\n";
+      int profit = 0;
+      for(int j = 0; j < sizeof(m)/sizeof(m[0]); j++){
+        for(int k = 0; k < sizeof(i)/sizeof(i[0]); k++){
+          if(m[j].name == i[k].name) profit += i[k].price - m[j].price;
+        }
+      }
+      fout << profit << "\n";
       fout << x << "\n";
       fout << ((double)clock()-start)/(double)CLOCKS_PER_SEC << "\n";
       cout << "The current problem has finished, press ENTER to go to the next one or type 'q' to end the program.\n";

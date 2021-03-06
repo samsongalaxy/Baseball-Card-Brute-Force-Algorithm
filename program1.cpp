@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <ctime>
+#include <math>
 #include "Card.h"
 
 using namespace std;
@@ -29,6 +30,7 @@ int find_profit(Card *i, Card *m){
 }
 
 int main(int argc, char *argv[]){
+  tf();
   clock_t start = clock();
   cout << "Please enter the name of the market price file: ";
   string mpf;
@@ -103,10 +105,19 @@ int main(int argc, char *argv[]){
         cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";
         return 0;
       }
+      else cout << "Continuing program.\n";
     }
+    else{
+      /*for(int j = 0; pow(2, x); i++){
 
+      }*/
+    }
     start = clock();
   }
   cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";
   return 0;
+}
+
+void tf(){
+  cout << "hello\n";
 }

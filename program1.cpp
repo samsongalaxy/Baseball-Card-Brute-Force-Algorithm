@@ -87,7 +87,9 @@ int main(int argc, char *argv[]){
         for(int k = 0; k < n; k++){
           cout << "Current card price: " << i[k].price << "\n";
           cout << "Current card name: " << i[k].name << "\n";
-          if(m[j].get_name() == i[k].get_name()) profit += i[k].price - m[j].price;
+          string s1 = m[j].get_name();
+          string s2 = i[k].get_name();
+          if(s1 == s2) profit += i[k].price - m[j].price;
           cout << "Current profit: " << profit << "\n";
         }
       }

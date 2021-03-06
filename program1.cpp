@@ -19,10 +19,6 @@ int card_check(Card *i, Card c){
   return 1;
 }
 
-void tf(){
-  cout << "hello\n";
-}
-
 int find_profit(Card *i, Card *m){
   int ret = 0;
   for(int j = 0; j < sizeof(m)/sizeof(m[0]); j++){
@@ -34,7 +30,6 @@ int find_profit(Card *i, Card *m){
 }
 
 int main(int argc, char *argv[]){
-  tf();
   clock_t start = clock();
   cout << "Please enter the name of the market price file: ";
   string mpf;
@@ -114,7 +109,7 @@ int main(int argc, char *argv[]){
       }
       else cout << "Continuing program.\n";
     }
-    /*else{
+    else{
       vector<Card> m;
       m.push_back(s[0]);
       int a = 0, b = 0;
@@ -134,7 +129,7 @@ int main(int argc, char *argv[]){
           it++;
         }
       }
-    }*/
+    }
     start = clock();
   }
   cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";

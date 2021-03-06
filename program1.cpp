@@ -43,7 +43,6 @@ int main(int argc, char *argv[]){
     i[j] = c;
 
   }
-  cout <<
   mpfin.close();
   string plf;
   cin >> plf;

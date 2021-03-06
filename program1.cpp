@@ -5,7 +5,6 @@
 #include <fstream>
 #include <sstream>
 #include <ctime>
-#include <math>
 #include "Card.h"
 
 using namespace std;
@@ -17,6 +16,10 @@ int card_check(Card *i, Card c){
     if(i[j].name == c.name) return 0;
   }
   return 1;
+}
+
+void tf(){
+  cout << "hello\n";
 }
 
 int find_profit(Card *i, Card *m){
@@ -116,8 +119,4 @@ int main(int argc, char *argv[]){
   }
   cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";
   return 0;
-}
-
-void tf(){
-  cout << "hello\n";
 }

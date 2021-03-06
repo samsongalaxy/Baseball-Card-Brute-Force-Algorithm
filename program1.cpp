@@ -72,9 +72,11 @@ int main(int argc, char *argv[]){
         return 0;
       }*/
     }
+    cout
     int maxProfit = 0, cardsBought = 0;
     Card *m = new Card[x];
     if(sum <= w){
+      cout << "hi1\n";
       ofstream fout;
       fout.open("output.txt", ios::out | ios::trunc);
       fout << x << "\n";

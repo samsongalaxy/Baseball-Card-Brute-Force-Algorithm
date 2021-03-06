@@ -89,14 +89,15 @@ int main(int argc, char *argv[]){
     else{
       vector<Card> m;
       int currw = 0;
-      m.push_back(s[0]);
+      Card empty;
+      m.push_back(empty);
       int a = 0, b = 0;
       while(true){
         if(a == x){
           a = 0;
           b++;
           if(b == x) break;
-          m.push_back(s[0]);
+          m.push_back(empty);
         }
         if((currw + s[a].price <= w)){
           int flag1 = 0;

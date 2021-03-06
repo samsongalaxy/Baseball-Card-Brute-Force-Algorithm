@@ -18,22 +18,8 @@ void Card::assignValue(string n, int p){
 }
 
 void Card::new_card_file(ifstream &fin){
-  //string num;
-  /*stringstream ss;
-  ss.clear();*/
   string temp;
   getline(fin, name, ' ');
   getline(fin, temp, '\n');
   price = stoi(temp);
-  /*ss.int(num);
-  ss >> temperature;*/
-}
-
-int card_check(Card *i){
-  for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
-    cout << "Checking for card: " << self.name << "\n";
-    cout << "Current card: " << i[j].name << "\n";
-    if(i[j].name == name) return 0;
-  }
-  return 1;
 }

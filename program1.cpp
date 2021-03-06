@@ -125,18 +125,27 @@ int main(int argc, char *argv[]){
         if(a == x){
           a = 0;
           b++;
+          if(b == x) break;
           m.push_back(s)
         }
         m[b] = s[a];
         vector<string>::iterator it;
         it = m.begin();
+        int profit = 0, count = 0;
         while(it != m.end()){
-          string s1 = m[j].get_name();
-          string s2 = i[k].get_name();
-          if(s1.compare(s2) == 0) profit += i[k].price - m[j].price;
+          for(int k = 0; k < n; k++){
+            string s1 = m[count].get_name();
+            string s2 = i[k].get_name();
+            if(s1.compare(s2) == 0) profit += i[k].price - s[j].price;
           it++;
+          count++;
+        }
+        if(profit > maxProfit){
+          maxProfit = profit;
+          cardsBought = b;
         }
       }
+      a++;
     }
     start = clock();
   }

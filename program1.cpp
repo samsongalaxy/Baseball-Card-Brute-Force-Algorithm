@@ -8,11 +8,11 @@
 
 using namespace std;
 
-int card_check(Card *i, string c){
+int card_check(Card *i, Card c){
   for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
-    cout << "Checking for card: " << c << "\n";
+    cout << "Checking for card: " << c.name << "\n";
     cout << "Current card: " << i[j].name << "\n";
-    if(i[j].name == c) return 0;
+    if(i[j].name == c.name) return 0;
   }
   return 1;
 }
@@ -65,8 +65,9 @@ int main(int argc, char *argv[]){
       c.new_card_file(plfin);
       s[j] = c;
       sum += s[j].price;
-      card_check(i, s[j].name); // for debugging
-      if(card_check(i, s[j].name) == 1){
+      cout << "Current card: " << s[j].name << "\n";
+      card_check(i, s[j]); // for debugging
+      if(card_check(i, s[j]) == 1){
         cout << "ERROR: " << s[j].name << " not found in market price file.\nEnding program...\n";
         return 0;
       }

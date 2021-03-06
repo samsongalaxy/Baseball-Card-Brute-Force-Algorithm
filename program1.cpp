@@ -1,3 +1,4 @@
+#include <cstring>
 #include <iostream>
 #include <cstdlib>
 #include <string>
@@ -86,7 +87,7 @@ int main(int argc, char *argv[]){
         for(int k = 0; k < n; k++){
           cout << "Current card price: " << i[k].price << "\n";
           cout << "Current card name: " << i[k].name << "\n";
-          if(strcmp(m[j].name, i[k].name)) profit += i[k].price - m[j].price;
+          if(strcmp(str(m[j].name), str(i[k].name))) profit += i[k].price - m[j].price;
           cout << "Current profit: " << profit << "\n";
         }
       }

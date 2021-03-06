@@ -121,7 +121,7 @@ int main(int argc, char *argv[]){
         }
         if(profit > maxProfit){
           maxProfit = profit;
-          cardsBought = b;
+          cardsBought = b + 1;
         }
         a++;
       }

@@ -5,6 +5,7 @@
 #include <fstream>
 #include <sstream>
 #include <ctime>
+#include <vector>
 #include "Card.h"
 
 using namespace std;
@@ -79,7 +80,7 @@ int main(int argc, char *argv[]){
       }*/
     }
     int maxProfit = 0, cardsBought = 0;
-    Card *m = new Card[x];
+
     if(sum <= w){
       //cout << "hi1\n";
       ofstream fout;
@@ -87,15 +88,15 @@ int main(int argc, char *argv[]){
       fout << x << "\n";
       int profit = 0;
       for(int j = 0; j < x; j++){
-        cout << "Current card price: " << s[j].get_price() << "\n";
-        cout << "Current card name: " << s[j].get_name() << "\n";
+        /*cout << "Current card price: " << s[j].get_price() << "\n";
+        cout << "Current card name: " << s[j].get_name() << "\n";*/
         for(int k = 0; k < n; k++){
-          string s1 = m[j].get_name();
+          string s1 = s[j].get_name();
           string s2 = i[k].get_name();
-          cout << "Current card price: " << i[k].price << "\n";
-          cout << "Current card name: " << s2.c_str() << "\n";
+          /*cout << "Current card price: " << i[k].price << "\n";
+          cout << "Current card name: " << s2.c_str() << "\n";*/
           if(strcmp(s1.compare(s2) == 0) profit += i[k].price - m[j].price;
-          cout << "Current profit: " << profit << "\n";
+          //cout << "Current profit: " << profit << "\n";
         }
       }
       fout << profit << "\n";
@@ -110,11 +111,27 @@ int main(int argc, char *argv[]){
       }
       else cout << "Continuing program.\n";
     }
-    else{
-      /*for(int j = 0; pow(2, x); i++){
-
-      }*/
-    }
+    /*else{
+      vector<Card> m;
+      m.push_back(s[0]);
+      int a = 0, b = 0;
+      while(true){
+        if(a == x){
+          a = 0;
+          b++;
+          m.push_back(s)
+        }
+        m[b] = s[a];
+        vector<string>::iterator it;
+        it = m.begin();
+        while(it != m.end()){
+          string s1 = m[j].get_name();
+          string s2 = i[k].get_name();
+          if(strcmp(s1.compare(s2) == 0) profit += i[k].price - m[j].price;
+          it++;
+        }
+      }
+    }*/
     start = clock();
   }
   cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";

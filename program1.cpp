@@ -10,6 +10,8 @@ using namespace std;
 
 bool card_check(Card *i, string c){
   for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
+    cout << "Checking for card: " << c << "\n";
+    cout << "Current card: " << i[j].name << "\n";
     if(i[j].name == c) return true;
   }
   return false;
@@ -27,6 +29,7 @@ int find_profit(Card *i, Card *m){
 
 int main(int argc, char *argv[]){
   clock_t start = clock();
+  cout << "Please enter the name of the market price file: ";
   string mpf;
   cin >> mpf;
   ifstream mpfin;
@@ -44,6 +47,7 @@ int main(int argc, char *argv[]){
 
   }
   mpfin.close();
+  cout << "Please enter the name of the price list file: ";
   string plf;
   cin >> plf;
   ifstream plfin;

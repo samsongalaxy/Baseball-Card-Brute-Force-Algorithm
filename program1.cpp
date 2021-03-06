@@ -31,6 +31,7 @@ int main(int argc, char *argv[]){
   cin >> mpf;
   ifstream mpfin;
   mpfin.open(mpf, ios::in);
+  cout << mpf << " has been successfully opened.\n";
   string temp;
   getline(mpfin, temp);
   int n = stoi(temp); //number of cards in market_price
@@ -42,11 +43,13 @@ int main(int argc, char *argv[]){
     i[j] = c;
 
   }
+  cout <<
   mpfin.close();
   string plf;
   cin >> plf;
   ifstream plfin;
   plfin.open(plf, ios::in);
+  cout << plf << " has been successfully opened.\n";
   while(!plfin.eof()){
     getline(plfin, temp, ' ');
     int x = stoi(temp); //number of cards for current section in price_list
@@ -73,8 +76,17 @@ int main(int argc, char *argv[]){
       fout << find_profit(i, s) << "\n";
       fout << x << "\n";
       fout << ((double)clock()-start)/(double)CLOCKS_PER_SEC << "\n";
+      cout << "The current problem has finished, press ENTER to go to the next one or type 'q' to end the program.\n";
+      string input;
+      cin >> input;
+      if(input == 'q' || input == 'Q'){
+        cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";
+        return 0;
+      }
     }
 
-
+    start = clock();
   }
+  cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";
+  return 0;
 }

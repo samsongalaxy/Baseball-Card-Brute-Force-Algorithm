@@ -31,7 +31,7 @@ void Card::new_card_file(ifstream &fin){
 
 int card_check(Card *i){
   for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
-    cout << "Checking for card: " << name << "\n";
+    cout << "Checking for card: " << self.name << "\n";
     cout << "Current card: " << i[j].name << "\n";
     if(i[j].name == name) return 0;
   }

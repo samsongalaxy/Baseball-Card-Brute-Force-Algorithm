@@ -72,10 +72,10 @@ int main(int argc, char *argv[]){
       //cout << "Current card: " << s[j].name << "\n";
       //card_check(i, s[j]); // for debugging
       int flag = 0;
-      for(int j = 0; j < n; j++){
+      for(int k = 0; k < n; k++){
         //cout << "Checking for card: " << c.name << "\n";
         //cout << "Current card: " << i[j].name << "\n";
-        string s1 = i[j].name;
+        string s1 = i[k].name;
         string s2 = s[j].name;
         if(s1.compare(s2) == 0) flag = 1;
       }

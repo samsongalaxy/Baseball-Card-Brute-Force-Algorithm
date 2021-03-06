@@ -8,14 +8,7 @@
 
 using namespace std;
 
-int card_check(Card *i, Card c){
-  for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
-    cout << "Checking for card: " << c.name << "\n";
-    cout << "Current card: " << i[j].name << "\n";
-    if(i[j].name == c.name) return 0;
-  }
-  return 1;
-}
+
 
 int find_profit(Card *i, Card *m){
   int ret = 0;
@@ -65,9 +58,9 @@ int main(int argc, char *argv[]){
       c.new_card_file(plfin);
       s[j] = c;
       sum += s[j].price;
-      cout << "Current card: " << s[j].name << "\n";
-      card_check(i, s[j]); // for debugging
-      if(card_check(i, s[j]) == 1){
+      //cout << "Current card: " << s[j].name << "\n";
+      s[j].card_check(i); // for debugging
+      if(s[j].card_check(i) == 1){
         cout << "ERROR: " << s[j].name << " not found in market price file.\nEnding program...\n";
         return 0;
       }

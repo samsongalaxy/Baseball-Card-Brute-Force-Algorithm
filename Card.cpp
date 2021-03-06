@@ -28,3 +28,12 @@ void Card::new_card_file(ifstream &fin){
   /*ss.int(num);
   ss >> temperature;*/
 }
+
+int card_check(Card *i){
+  for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
+    cout << "Checking for card: " << name << "\n";
+    cout << "Current card: " << i[j].name << "\n";
+    if(i[j].name == name) return 0;
+  }
+  return 1;
+}

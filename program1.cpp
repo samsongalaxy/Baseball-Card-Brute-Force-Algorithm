@@ -99,9 +99,12 @@ int main(int argc, char *argv[]){
           m.push_back(s[0]);
         }
         if((currw + s[a].price <= w)){
-
+          int flag1 = 0;
+          for(int k = 0; k < n; k++) if(m[k].name.compare(s[a].name) == 0) flag1 = 1;
+          if(flag1 == 0){
             m[b] = s[a];
             currw += m[b].price;
+          }
         }
         vector<Card>::iterator it;
         it = m.begin();

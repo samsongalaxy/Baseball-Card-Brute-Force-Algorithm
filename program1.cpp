@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <time>
 #include "Card.h"
 
 using namespace std;
@@ -14,7 +15,18 @@ bool card_check(Card *i, string c){
   return false;
 }
 
+int find_profit(Card *i, Card *m){
+  int ret = 0;
+  for(int j = 0; j < sizeof(m)/sizeof(m[0]); j++){
+    for(int k = 0; k < sizeof(i)/sizeof(i[0]); k++){
+      if(m[j].name == i[k].name) ret += i[k].price - m[j].price;
+    }
+  }
+  return ret;
+}
+
 int main(int argc, char *argv[]){
+  clock_t start = clock();
   string mpf;
   cin >> mpf;
   ifstream mpfin;
@@ -52,8 +64,16 @@ int main(int argc, char *argv[]){
         return 0;
       }
     }
-    int maxProfit = 0;
+    int maxProfit = 0, cardsBought = 0;
     Card *m = new Card[x];
+    if(sum <= w){
+      ofstream fout;
+      fout.open("output.txt", ios::out | ios::trunc);
+      fout << x << "\n";
+      fout << find_profit(i, s) << "\n";
+      fout << x << "\n";
+      fout << ((double)clock()-start)/(double)CLOCKS_PER_SEC << "\n";
+    }
 
 
   }

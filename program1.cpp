@@ -8,13 +8,13 @@
 
 using namespace std;
 
-bool card_check(Card *i, string c){
+int card_check(Card *i, string c){
   for(int j = 0; j < sizeof(i)/sizeof(i[0]); j++){
     cout << "Checking for card: " << c << "\n";
     cout << "Current card: " << i[j].name << "\n";
-    if(i[j].name == c) return true;
+    if(i[j].name == c) return 0;
   }
-  return false;
+  return 1;
 }
 
 int find_profit(Card *i, Card *m){
@@ -65,7 +65,8 @@ int main(int argc, char *argv[]){
       c.new_card_file(plfin);
       s[j] = c;
       sum += s[j].price;
-      if(!card_check(i, s[j].name)){
+      card_check(i, s[j].name); // for debugging
+      if(card_check(i, s[j].name) == 1){
         cout << "ERROR: " << s[j].name << " not found in market price file.\nEnding program...\n";
         return 0;
       }

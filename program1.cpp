@@ -100,7 +100,7 @@ int main(int argc, char *argv[]){
         }
         if((currw + s[a].price <= w)){
           int flag1 = 0;
-          for(int k = 0; k < n; k++) if(m[k].name.compare(s[a].name) == 0) flag1 = 1;
+          for(int k = 0; k < b+1; k++) if(m[k].name.compare(s[a].name) == 0) flag1 = 1;
           if(flag1 == 0){
             m[b] = s[a];
             currw += m[b].price;

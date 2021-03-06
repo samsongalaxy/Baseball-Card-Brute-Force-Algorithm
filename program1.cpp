@@ -62,8 +62,10 @@ int main(int argc, char *argv[]){
   cout << plf << " has been successfully opened.\n";
   while(!plfin.eof()){
     getline(plfin, temp, ' ');
+    cout << "attempting to read: " << temp << "\n";
     int x = stoi(temp); //number of cards for current section in price_list
     getline(plfin, temp, '\n');
+    cout << "attempting to read: " << temp << "\n";
     int w = stoi(temp); //weight constraint for problem
     Card *s = new Card[x];
     int sum = 0; //potential cost of all of Gertrude's card
@@ -102,7 +104,8 @@ int main(int argc, char *argv[]){
       fout << profit << "\n";
       fout << x << "\n";
       fout << ((double)clock()-start)/(double)CLOCKS_PER_SEC << "\n";
-      cout << "The current problem has finished, press ENTER to go to the next one or type 'q' to end the program.\n";
+      fout.close();
+      cout << "The current problem has finished, enter 'q' to end the program, enter anything else to continue.\n";
       string input;
       cin >> input;
       if(input == "q" || input == "Q"){

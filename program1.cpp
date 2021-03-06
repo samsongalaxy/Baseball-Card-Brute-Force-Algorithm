@@ -22,7 +22,6 @@ int main(int argc, char *argv[]){
   getline(mpfin, temp);
   int n = stoi(temp); //number of cards in market_price
   Card *i = new Card[n];
-
   for(int j = 0; j < n; j++){
     Card c;
     c.new_card_file(mpfin);
@@ -62,7 +61,6 @@ int main(int argc, char *argv[]){
       }
     }
     int maxProfit = 0, cardsBought = 0;
-
     if(sum <= w){
       ofstream fout;
       fout.open("output.txt", ios::out | ios::trunc);
@@ -101,8 +99,16 @@ int main(int argc, char *argv[]){
           m.push_back(s[0]);
         }
         if((currw + s[a].price <= w)){
-          m[b] = s[a];
-          currw += m[b].price;
+          int flag = 0;
+          for(int k = 0; k < n; k++){
+            string s1 = m[k].name;
+            string s2 = s[a].name;
+            if(s1.compare(s2) == 0) flag = 1;
+          }
+          if(flag == 1){
+            m[b] = s[a];
+            currw += m[b].price;
+          }
         }
         vector<Card>::iterator it;
         it = m.begin();

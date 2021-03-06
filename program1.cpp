@@ -79,7 +79,7 @@ int main(int argc, char *argv[]){
       cout << "The current problem has finished, press ENTER to go to the next one or type 'q' to end the program.\n";
       string input;
       cin >> input;
-      if(input == 'q' || input == 'Q'){
+      if(input == "q" || input == "Q"){
         cout << "The program has ended, results for the most recent problem can be found in 'output.txt'\n";
         return 0;
       }

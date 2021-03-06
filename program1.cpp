@@ -90,6 +90,7 @@ int main(int argc, char *argv[]){
     }
     else{
       vector<Card> m;
+      int currw = 0;
       m.push_back(s[0]);
       int a = 0, b = 0;
       while(true){
@@ -99,7 +100,10 @@ int main(int argc, char *argv[]){
           if(b == x) break;
           m.push_back(s[0]);
         }
-        m[b] = s[a];
+        if((currw + s[a].price <= w)){
+          m[b] = s[a];
+          currw += m[b].price;
+        }
         vector<Card>::iterator it;
         it = m.begin();
         int profit = 0, count = 0;

@@ -70,11 +70,19 @@ int main(int argc, char *argv[]){
       s[j] = c;
       sum += s[j].price;
       //cout << "Current card: " << s[j].name << "\n";
-      /*card_check(i, s[j]); // for debugging
-      if(s[j].card_check(i, s[j]) == 1){
+      //card_check(i, s[j]); // for debugging
+      int flag = 0;
+      for(int j = 0; j < n; j++){
+        //cout << "Checking for card: " << c.name << "\n";
+        //cout << "Current card: " << i[j].name << "\n";
+        string s1 = i[j].name;
+        string s2 = s[j].name;
+        if(s1.compare(s2) == 0) flag = 1;
+      }
+      if(flag == 0){
         cout << "ERROR: " << s[j].name << " not found in market price file.\nEnding program...\n";
         return 0;
-      }*/
+      }
     }
     int maxProfit = 0, cardsBought = 0;
 
@@ -125,7 +133,7 @@ int main(int argc, char *argv[]){
         while(it != m.end()){
           string s1 = m[j].get_name();
           string s2 = i[k].get_name();
-          if(strcmp(s1.compare(s2) == 0) profit += i[k].price - m[j].price;
+          if(s1.compare(s2) == 0) profit += i[k].price - m[j].price;
           it++;
         }
       }

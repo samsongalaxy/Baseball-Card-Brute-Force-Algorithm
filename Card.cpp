@@ -23,3 +23,11 @@ void Card::new_card_file(ifstream &fin){
   getline(fin, temp, '\n');
   price = stoi(temp);
 }
+
+int Card::get_price(){
+  return price;
+}
+
+string Card::get_name(){
+  return name;
+}

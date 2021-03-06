@@ -82,12 +82,12 @@ int main(int argc, char *argv[]){
       fout << x << "\n";
       int profit = 0;
       for(int j = 0; j < x; j++){
-        cout << "Current card price: " << s[j].price << "\n";
-        cout << "Current card name: " << s[j].name << "\n";
+        cout << "Current card price: " << s[j].get_price() << "\n";
+        cout << "Current card name: " << s[j].get_name() << "\n";
         for(int k = 0; k < n; k++){
           cout << "Current card price: " << i[k].price << "\n";
           cout << "Current card name: " << i[k].name << "\n";
-          if(strcmp(str(m[j].name), str(i[k].name))) profit += i[k].price - m[j].price;
+          if(strcmp(m[j].get_name(), i[k].get_name())) profit += i[k].price - m[j].price;
           cout << "Current profit: " << profit << "\n";
         }
       }

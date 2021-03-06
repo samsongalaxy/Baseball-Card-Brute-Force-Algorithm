@@ -12,6 +12,8 @@ class Card{
         void assignValue(std::string n, int p);
         void new_card_file(std::ifstream &fin);
         //int card_check(Card *i);
+        int get_price();
+        std::string get_name();
         std::string name;
         int price;
 };

@@ -80,8 +80,13 @@ int main(int argc, char *argv[]){
       fout << x << "\n";
       int profit = 0;
       for(int j = 0; j < sizeof(m)/sizeof(m[0]); j++){
+        cout << "Current card price: " << m[j].price << "\n";
+        cout << "Current card name: " << m[j].name << "\n";
         for(int k = 0; k < sizeof(i)/sizeof(i[0]); k++){
+          cout << "Current card price: " << i[k].price << "\n";
+          cout << "Current card name: " << i[k].name << "\n";
           if(m[j].name == i[k].name) profit += i[k].price - m[j].price;
+          cout << "Current profit: " << profit << "\n";
         }
       }
       fout << profit << "\n";

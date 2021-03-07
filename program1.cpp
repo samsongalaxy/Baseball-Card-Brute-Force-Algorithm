@@ -95,8 +95,8 @@ int main(int argc, char *argv[]){
       while(true){
         if(a == x){
           a = 0;
-          b++;
           if(b == x) break;
+          b++;
           m.push_back(empty);
         }
         if((currw + s[a].price <= w)){

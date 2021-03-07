@@ -91,7 +91,7 @@ int main(int argc, char *argv[]){
       int currw = 0;
       Card empty;
       m.push_back(empty);
-      int a = 0, b = 0;
+      int a = 0, b = 0, profit = 0, count = 0;
       while(true){
         if(a == x){
           a = 0;
@@ -109,7 +109,7 @@ int main(int argc, char *argv[]){
         }
         vector<Card>::iterator it;
         it = m.begin();
-        int profit = 0, count = 0;
+
         while(it != m.end()){
           for(int k = 0; k < n; k++){
             string s1 = m[count].get_name();

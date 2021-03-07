@@ -88,6 +88,7 @@ int main(int argc, char *argv[]){
     }
     else{
       vector<Card> m;
+      m.clear();
       int currw = 0;
       Card empty;
       m.push_back(empty);
